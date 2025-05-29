@@ -1,0 +1,56 @@
+name: "ECE421-UTSG-F-24"
+navbar:
+  title: "ECE421"
+  left:
+    - text: "Schedule"
+      href: index.html#schedule
+    - text: "Coursework"
+      href: index.html#coursework
+    - text: "Syllabus"
+      href: syllabus.html
+      menu:
+      - text: "Overview"
+        href: syllabus.html
+      - text: "Textbooks"
+        href: syllabus.html#syltextbook
+      - text: "Assessment and Deadlines"
+        href: syllabus.html#sylassessment
+      - text: "Lateness Policy"
+        href: syllabus.html#latedays
+      - text: "Missed Term Work"
+        href: syllabus.html#sylmissterm
+      - text: "Remark Requests"
+        href: syllabus.html#sylremark
+      - text: "Tutorials"
+        href: syllabus.html#syltut
+      - text: "Course Announcements"
+        href: syllabus.html#sylannounce
+      - text: "Discussion Board"
+        href: syllabus.html#syldisc
+      - text: "Communications"
+        href: syllabus.html#sylcommunication
+      - text: "Academic Integrity"
+        href: syllabus.html#sylintegrity
+      - text: "Indigenous Students’ Supports"
+        href: syllabus.html#sylindigsup
+      - text: "Wellness and Mental Health Support"
+        href: syllabus.html#sylwell
+      - text: "Accommodations"
+        href: syllabus.html#sylaccommodations
+      - text: "Special Consideration"
+        href: syllabus.html#sylspecconsider
+      - text: "Equity, Diversity and Inclusion"
+        href: syllabus.html#syledi
+      - text: "University Land Acknowledgement"
+        href: syllabus.html#syllan
+    - text: "Crowdmark"
+      href: https://crowdmark.com
+    - text: "Quercus"
+      href: https://q.utoronto.ca/courses/373623
+output_dir: "docs"
+output: 
+  html_document:
+    css: css/style.css
+    includes:
+      # before_body: sidebar.html
+      in_header: favicon.html

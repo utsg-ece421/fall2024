@@ -1,0 +1,194 @@
+---
+title: "Syllabus"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+source("./_aux/links_supplementary.R")
+```
+
+# Course Syllabus
+
+::: {#syltextbook .container .sec}
+## Textbooks
+
+  - **Learning from Data**, by Yaser S. Abu-Mostafa, Malik Magdon-Ismail, and Hsuan-Tien Lin, AMLBook, 2012 (recommended)
+  - **Deep Learning**, by Ian Goodfellow, Yoshua Bengio, and Aaron Courville, MIT Press, 2016 (recommended)
+  - **Pattern Recognition and Machine Learning**, by Christopher Bishop, Springer, 2006 (recommended)
+  - **An Introduction to Statistical Learning**, by Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani, Springer New York, 2022 (recommended)
+  - **The Elements of Statistical Learning**, by Trevor Hastie, Robert Tibshirani, Jerome Friedman, Springer New York, 2009 (recommended)
+:::
+
+
+::: {#sylassessment .container .sec}
+## Assessment and Deadlines
+
+  - **Programming Assignments (40%)**
+      - There will be 4 assignments, each worth 10%.
+      - You may complete them individually or in pairs, and you are free to change partners for each assignment.
+      - Only one submission from a group member is required. Assignments must be submitted on Quercus, and the submission deadline will be at 11:59 PM.
+      - Group members will receive the same grade.
+  - **Midterm (25%)**
+      - The midterm is closed book, 2 hours, and scheduled for Monday, October 21, 9:00 AM - 11:00 AM, which will test the content of the weeks before the test.
+      - **Allowed Calculator Types:** Type 2 (*i.e.*, All non-programmable electronic calculators)
+      - **Exam Paper Type:** Type A (*i.e.*, a closed book examination, no aids are permitted other than the information printed on the examination paper.)
+  - **Final Exam (35%)**
+      - The final exam is closed book, comprehensive, 2 hours and 30 minutes, and held during the exam period.
+      - **Allowed Calculator Types:** Type 2 (*i.e.*, All non-programmable electronic calculators)
+      - **Exam Paper Type:** Type A (*i.e.*, a closed book examination, no aids are permitted other than the information printed on the examination paper.)
+
+See the course schedule for the tentative due dates. Note that **due dates may change** based on how the course is progressing.
+:::
+
+
+::: {#latedays .container .sec}
+## Lateness Policy
+- 5% deduction will be applied per day of lateness. No Submissions will be accepted after 72 hours except for documented unusual circumstances
+:::
+
+::: {#sylmissterm .container .sec}
+## Missed Term Work
+
+In general, if work is missed due to an emergency situation, then the weight of the work will be placed on other similar components in the course. For example, a missed term test would add to the weight of the final exam, and a missed assignment would add to the weight of a later assignment. Exact accommodation will be discussed between the student and the instructor, who must be informed within 72 hours of the due date.
+:::
+
+
+::: {#sylremark .container .sec}
+## Remark Requests
+
+Remark requests are due within 1 week of receiving the graded work and must be submitted by posting a private note on Piazza.
+
+  - We ask that you carefully review your assignments, reflect, and write a short explanation justifying the reasons for a regrading request.
+  - If a grade is contested and we realize that the marker made a mistake in the student's favour, the mark for that assignment may be lowered when the mistake is found. This would otherwise create a situation which is unfair to other students.
+  - Please include your full name and UTORid in the body of the private note.
+:::
+
+::: {#syltut .container .sec}
+## Tutorials
+Tutorials consist of reviews and exercises that will prepare you for the tests as well as the assignments. They are a crucial learning component of this course and are as important to attend as the lectures!
+:::
+
+::: {#sylannounce .container .sec}
+## Course Announcements
+You are responsible for reading all postings made by the instructor or the TAs on the course webpage, Quercus, and Piazza, and for being familiar with the entire content of this Syllabus; please take a few minutes at the beginning of the term to read through the entire Syllabus.
+:::
+
+::: {#syldisc .container .sec}
+## Discussion Board
+  - For all questions of general interest (whose answers are likely to be useful to other students, e.g., about the course material, problem sets, programming assignments, Wireshark labs, general questions about course logistics and administration), where you can ask the question while respecting the academic integrity of the course (without revealing any idea or part of a solution to a course assessment), please start a new topic directly on the Piazza discussion forum, so that everyone can benefit from reading your questions and the associated answers. We will monitor the forum regularly, but feel free to answer questions from other students, too! Helping someone else learn is one of the most effective ways to master a subject.
+
+  - For personal questions (making appointments, remarking requests, extensions, missing class, etc.), please email the course instructor directly from your University of Toronto email address. Please include "`r course_code`" in the subject line and your full name and UTORid in the body of the email. Otherwise, your message might be marked as spam! We aim to respond to all email and forum postings by the end of the next business day (not counting weekends and holidays). However, it may take longer, especially near due dates. If you do not hear back after four days, please do not hesitate to send a follow-up email or come in person during office hours.
+:::
+
+::: {#sylcommunication .container .sec}
+## Communications 
+It is the student's responsibility to:
+  - Maintain current contact information with the University, including address, phone numbers, and emergency contact information.
+  - Use the university-provided e-mail address or maintain a valid forwarding e-mail address.
+  - Regularly check the official University communications channels. Official University communications are considered received if sent by postal mail, fax, or e-mail to the student's designated primary e-mail account via their @utoronto.ca alias.
+  - Accept that forwarded e-mails may be lost and that e-mail is considered received if sent via the student's @utoronto.ca alias.
+  - Check the UofT/Quercus email and course websites on a regular basis during the term. Further, check the discussion board daily for any course updates/announcements.
+  - Read and keep current with the discussions on the discussion board.
+:::
+
+::: {#sylintegrity .container .sec}
+## Academic Integrity
+
+All students, faculty and staff are expected to follow the University's guidelines and policies on academic integrity. For students, this means following the standards of academic honesty when writing assignments, collaborating with fellow students, and writing tests and exams. Ensure that the work you submit for grading represents your own honest efforts. 
+
+Plagiarism, representing someone else's work as your own or submitting work that you have previously submitted for marks in another class or program, is a serious offence that can result in sanctions. Speak to me or your TA for advice on anything that you find unclear. To learn more about how to cite and use source material appropriately and for other writing support, see the [U of T writing support website](https://writing.utoronto.ca/). Consult the [Code of Behaviour on Academic Matters](https://governingcouncil.utoronto.ca/secretariat/policies/code-behaviour-academic-matters-july-1-2019) for a complete outline of the University's policy and expectations. For more information, please see the [U of T Academic Integrity website](https://www.academicintegrity.utoronto.ca/).
+  
+:::
+
+
+
+
+
+
+::: {#sylindigsup .container .sec}
+## Indigenous Students’ Supports 
+If you are an Indigenous engineering student, you are invited to join a private Discord channel to meet other Indigenous students, professors, and staff, chat about scholarships, awards, work opportunities, Indigenous-related events, and receive mentorship. Email Professor Bazylak if you are interested.
+
+Indigenous students at U of T are also invited to visit Nations House’s (FNH) Indigenous Student Services for culturally relevant programs and services. If you want more information on how to apply for Indigenous specific funding opportunities, cultural programs, traditional medicines, academic support, monthly social events or receive the weekly newsletter, go to the [FNH website](https://studentlife.utoronto.ca/department/first-nations-house/), email or follow FNH on social media: [Facebook](https://www.facebook.com/FirstNationsHouseUofT), [Instagram](https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Ffirstnationshouse%2F&is_from_rle), or [TikTok](https://www.tiktok.com/@first.nations.house). A full event calendar is on the CLNX platform. Check CLNX often to see what new events are added!
+:::
+
+::: {#sylwell .container .sec}
+## Wellness and Mental Health Support 
+
+Your personal wellness and mental health are important. The University of Toronto and the Faculty of Applied Science & Engineering offer a wide range of free and confidential services that can support your well-being.
+
+As a U of T Engineering student, you have a Departmental [Undergraduate Advisor](http://uoft.me/engadvisors) or a Departmental [Graduate Administrator](https://gradstudies.engineering.utoronto.ca/contact-us/#grad-admins) who can support you by advising on personal matters that impact your academics. Other resources that you may find helpful are listed on the [U of T Engineering Mental Health & Wellness webpage](https://www.uofteng.ca/mentalhealth), and a small selection are also included here:
+
+- [U of T Engineering’s Student & Community Wellness Coordinator](https://www.engineering.utoronto.ca/mental-health-wellness/#_blank)
+- [Health & Wellness](https://studentlife.utoronto.ca/department/health-wellness/) and the [On-Location Engineering Wellness Counsellor](https://undergrad.engineering.utoronto.ca/advising-and-wellness/health-wellness/)
+- [Health & Wellness Peer Support Program](https://studentlife.utoronto.ca/service/peer-support/)
+- [Accessibility Services](https://studentlife.utoronto.ca/department/accessibility-services/) & the [On-Location Advisor](https://undergrad.engineering.utoronto.ca/advising-and-wellness/accessibility-services/)
+- [Graduate Engineering Council of Students’ Mental Wellness Commission](https://gecos.sa.utoronto.ca/commissions/)
+- [SKULE Mental Wellness](https://wellness.skule.ca/)
+- [U of T Engineering’s Learning Strategist](https://undergrad.engineering.utoronto.ca/advising-and-wellness/learning-skills-strategist/) and [Centre for Learning Strategy Support](https://studentlife.utoronto.ca/department/centre-for-learning-strategy-support/)
+- [Registrar’s Office](https://undergrad.engineering.utoronto.ca/academics-registration/registrars-office-2/about-the-registrars-office/) and [Scholarships & Financial Aid Office & Advisor](https://undergrad.engineering.utoronto.ca/fees-financial-aid/u-of-t-engineering-scholarships-financial-aid-office/)
+
+We encourage you to access these resources as soon as you feel you need support; no issue is too small. You may reach out to the counsellors at U of T Telus Health Student Support for 24/7 free and confidential counselling support.
+
+If you find yourself feeling distressed and in need of more immediate support visit [uoft.me/feelingdistressed](https://studentlife.utoronto.ca/task/support-when-you-feel-distressed/) or U of T Engineering’s [Urgent Support – Talk to Someone Right Now](https://www.engineering.utoronto.ca/mental-health-wellness/talk-to-someone-right-now/).
+
+
+:::
+
+::: {#sylaccommodations .container .sec}
+## Accommodations
+
+  The University of Toronto supports accommodations for students with diverse learning needs, which may be associated with mental health conditions, learning disabilities, autism spectrum, ADHD, mobility impairments, functional/fine motor impairments, concussion or head injury, visual impairments, chronic health conditions, addictions, D/deaf, deafened or hard of hearing, communication disorders and/or temporary disabilities, such as fractures and severe sprains, or recovery from an operation. 
+  
+  If you have a learning need requiring an accommodation the University of Toronto recommends that students [register with Accessibility Services](https://studentlife.utoronto.ca/service/accessibility-services-registration-and-documentation-requirements/) as soon as possible. 
+  
+  We know that many students may be hesitant to reach out to Accessibility Services for accommodations. The process of accommodation is private; we will not share details of your needs or condition with any instructor. 
+  
+  If you feel hesitant to register with us, we encourage you to reach out for further information and resources on how we can support. It may feel difficult to ask for help, but it can make all the difference during your time here. 
+  
+  Phone: 416-978-8060 
+  
+  Email: accessibility.services@utoronto.ca
+:::
+
+::: {#sylspecconsider .container .sec}
+## Special Consideration
+
+Please contact us immediately if you cannot complete coursework or miss a test due to a major illness or other circumstances outside your control. Special consideration will be evaluated on a case-by-case basis and is not given automatically. We may be unable to grant you exactly the special consideration you seek, so please ensure we have time to discuss your situation.
+
+In order to receive special consideration, you must fill out a Request for Special Consideration Form. Submit the form in PDF format as soon as possible, together with any supporting documentation, to the course instructor's email address.
+
+You can contact us (by email using the course instructor's email address) even before you have your documentation ready to submit; we won't be able to tell you at that point what accommodation you may receive, but we can answer other questions and offer advice. It is always easier to resolve situations earlier rather than later. If you face a particularly disruptive situation that is likely to impact more than one course, please contact your College Registrar. They are best equipped to provide you with general advice and support that goes beyond a single course.
+:::
+
+
+::: {#syledi .container .sec}
+## Equity, Diversity and Inclusion
+**Looking for community? Feeling isolated? Not being understood or heard?**
+
+**You are not alone.** You can talk to anyone in the Faculty that you feel comfortable approaching, anytime – professors, instructors, teaching assistants, [first-year](https://undergrad.engineering.utoronto.ca/contact/#_blank) or [upper years](https://undergrad.engineering.utoronto.ca/contact/#_blank) academic advisors, student leaders or the [Assistant Dean of Diversity, Inclusion and Professionalism](marisa.sterling@utoronto.ca).
+
+**You belong here.** In this class, the participation and perspectives of everyone is invited and encouraged. The broad range of identities and the intersections of those identities are valued and create an inclusive team environment that will help you achieve academic success. You can read the evidence for this approach [here](https://www.weforum.org/stories/2019/04/business-case-for-diversity-in-the-workplace/).
+
+**You have rights.** The [University Code of Student Conduct](https://governingcouncil.utoronto.ca/secretariat/policies/code-student-conduct-december-13-2019) and the [Ontario Human Rights Code](https://www.ohrc.on.ca/en/students-handouts/fact-sheet-1-ontario-human-rights-code) protect you against all forms of harassment or discrimination, including but not limited to acts of racism, sexism, Islamophobia, antisemitism, homophobia, transphobia, ableism, classism and ageism. Engineering denounces unprofessionalism or intolerance in language, actions or interactions, in person or online, on- or off-campus. Engineering takes these concerns extremely seriously and you can confidentially disclose directly to the Assistant Dean for help [here](marisa.sterling@utoronto.ca).
+
+Resource List:
+
+  - [Engineering Equity, Diversity & Inclusion Groups, Initiatives & Student Resources](https://www.uofteng.ca/edi)
+  - [Engineering Positive Space Resources](https://www.engineering.utoronto.ca/about/equity-diversity-and-inclusion/engineering-positive-space/)
+  - Request a religious-based accommodation [here](https://studentlife.utoronto.ca/service/religious-accommodation-support/)
+  - Email Marisa Sterling, P.Eng, the Assistant Dean, Diversity, Inclusion & Professionalism [here](marisa.sterling@utoronto.ca)
+  - Make a confidential disclosure of harassment, discrimination or unprofessionalism [here](https://www.uofteng.ca/disclosure) or email engineering@utoronto.ca or call 416.946.3986
+  - Email the Engineering Society Equity & Inclusivity Director [here](equity@g.skule.ca)
+  - [U of T Equity Offices & First Nations House Resources](https://people.utoronto.ca/inclusion/resources/)
+
+:::
+
+
+
+
+::: {#syllan .container .sec}
+## University Land Acknowledgement 
+I wish to acknowledge this land on which the University of Toronto operates. For thousands of years, it has been the traditional land of the Huron-Wendat, the Seneca, and the Mississaugas of the Credit. Today, this meeting place is still the home to many Indigenous people from across Turtle Island and we are grateful to have the opportunity to work on this land. Learn more about Canada’s relationship with Indigenous Peoples [here](https://www.engineering.utoronto.ca/about/equity-diversity-and-inclusion/indigenous-cultural-competency-toolkit).
+:::

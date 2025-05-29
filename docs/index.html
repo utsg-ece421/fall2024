@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>ECE421 Fall 2024</title>
+
+<script src="site_libs/header-attrs-2.28/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link rel="icon" type="image/png" href="./images/favicon.png">
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">ECE421</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html#schedule">Schedule</a>
+</li>
+<li>
+  <a href="index.html#coursework">Coursework</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Syllabus
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="syllabus.html">Overview</a>
+    </li>
+    <li>
+      <a href="syllabus.html#syltextbook">Textbooks</a>
+    </li>
+    <li>
+      <a href="syllabus.html#sylassessment">Assessment and Deadlines</a>
+    </li>
+    <li>
+      <a href="syllabus.html#latedays">Lateness Policy</a>
+    </li>
+    <li>
+      <a href="syllabus.html#sylmissterm">Missed Term Work</a>
+    </li>
+    <li>
+      <a href="syllabus.html#sylremark">Remark Requests</a>
+    </li>
+    <li>
+      <a href="syllabus.html#syltut">Tutorials</a>
+    </li>
+    <li>
+      <a href="syllabus.html#sylannounce">Course Announcements</a>
+    </li>
+    <li>
+      <a href="syllabus.html#syldisc">Discussion Board</a>
+    </li>
+    <li>
+      <a href="syllabus.html#sylcommunication">Communications</a>
+    </li>
+    <li>
+      <a href="syllabus.html#sylintegrity">Academic Integrity</a>
+    </li>
+    <li>
+      <a href="syllabus.html#sylindigsup">Indigenous Students’ Supports</a>
+    </li>
+    <li>
+      <a href="syllabus.html#sylwell">Wellness and Mental Health Support</a>
+    </li>
+    <li>
+      <a href="syllabus.html#sylaccommodations">Accommodations</a>
+    </li>
+    <li>
+      <a href="syllabus.html#sylspecconsider">Special Consideration</a>
+    </li>
+    <li>
+      <a href="syllabus.html#syledi">Equity, Diversity and Inclusion</a>
+    </li>
+    <li>
+      <a href="syllabus.html#syllan">University Land Acknowledgement</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="https://crowdmark.com">Crowdmark</a>
+</li>
+<li>
+  <a href="https://q.utoronto.ca/courses/373623">Quercus</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">ECE421 Fall 2024</h1>
+
+</div>
+
+
+<div id="header">
+<div id="header-text" class="sec">
+<p><strong>ECE421: Introduction to Machine Learning</strong><br> <span
+class="header-subtitle">University of Toronto (Downtown) – Fall
+2024<br>Electrical and Computer Engineering</span></p>
+</div>
+<div id="header-image" class="img">
+<p><img src="images/favicon.png" /></p>
+</div>
+</div>
+<div id="description" class="sec">
+<p>This course is designed as an <em>in-person</em> course aimed at
+introducing the basic theory, the fundamental algorithms, and the
+computational toolboxes of machine learning. The focus is on a balanced
+treatment of the practical and theoretical approaches, along with hands
+on experience with relevant software packages. Supervised learning
+methods covered in the course will include: the study of linear models
+for classification and regression, neural networks. Unsupervised
+learning methods covered in the course will include: k-means clustering,
+and Gaussian mixture models. Techniques to control overfitting,
+including regularization and validation, will be covered. Furthermore,
+this course introduces the fundamental of Markov Decision Process and
+Reinforcement Learning.</p>
+<p>For your convenience, all lectures and instructor’s Office Hours will
+be also live-streamed over <a
+href="https://utoronto.zoom.us/j/84800897084">Zoom</a>. Furthermore, all
+lectures will be recorded and posted on the course website. Note that
+tutorials won’t be recorded and live-streamed.</p>
+</div>
+<div id="course-staff" class="section level2">
+<h2>Course Staff</h2>
+<div id="shuffleleft-container" class="col sec">
+<div class="instructorphoto">
+<div class="float">
+<img src="images/erfan_img3.png" alt="Erfan Meskar Instructor" />
+<div class="figcaption">Erfan Meskar<br>Instructor</div>
+</div>
+</div>
+<div class="instructorphoto">
+<div class="float">
+<img src="images/empty.png" alt="Brendan Frey Instructor" />
+<div class="figcaption">Brendan Frey<br>Instructor</div>
+</div>
+</div>
+<div class="instructorphoto">
+<div class="float">
+<img src="images/empty.png" alt="Mohammad Yaghini TA" />
+<div class="figcaption">Mohammad Yaghini<br>TA</div>
+</div>
+</div>
+<div class="instructorphoto">
+<div class="float">
+<img src="images/empty.png" alt="Mustafa Ammous TA" />
+<div class="figcaption">Mustafa Ammous<br>TA</div>
+</div>
+</div>
+<div class="instructorphoto">
+<div class="float">
+<img src="images/empty.png" alt="Wen Xu TA" />
+<div class="figcaption">Wen Xu<br>TA</div>
+</div>
+</div>
+<div class="instructorphoto">
+<div class="float">
+<img src="images/empty.png" alt="Kai Wang TA" />
+<div class="figcaption">Kai Wang<br>TA</div>
+</div>
+</div>
+<div class="instructorphoto">
+<div class="float">
+<img src="images/empty.png" alt="Aristeidis Seretis TA" />
+<div class="figcaption">Aristeidis Seretis<br>TA</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sechighlight">
+<div id="logistics" class="section level2 sec">
+<h2>Logistics</h2>
+<ul>
+<li><strong>Instructors:</strong>
+<ul>
+<li>Erfan Meskar <img src="images/erfan_email.jpg" /></li>
+<li>Brendan Frey <img src="images/brendan_email.jpg" /></li>
+</ul></li>
+<li><strong>Lectures:</strong> you can attend the lectures both
+in-person and over <a
+href="https://utoronto.zoom.us/j/84800897084">Zoom</a>.
+<ul>
+<li><strong>LEC0101:</strong>
+<ul>
+<li>Monday, 9:00 AM - 11:00 AM, SF 3202</li>
+<li>Wednesday, 9:00 AM - 10:00 AM, SF 3202</li>
+</ul></li>
+<li><strong>LEC0102:</strong>
+<ul>
+<li>Wednesday, 10:00 AM - 12:00 PM, SF 3202</li>
+<li>Thursday, 9:00 AM - 10:00 AM, BA 1180</li>
+</ul></li>
+</ul></li>
+<li><strong>Tutorials:</strong>
+<ul>
+<li><strong>TUT0101:</strong> Wednesday, 12:00 PM - 2:00 PM, Room SF
+2202 (<em>in-person only</em>)</li>
+<li><strong>TUT0102:</strong> Wednesday, 12:00 PM - 2:00 PM, Room GB 304
+(<em>in-person only</em>)</li>
+<li><strong>TUT0103:</strong> Wednesday, 12:00 PM - 2:00 PM, Room GB 120
+(<em>in-person only</em>)</li>
+</ul></li>
+<li><strong>Office hours:</strong>
+<ul>
+<li>Erfan Meskar (Pratt Building 371): Thursdays 10:00 AM - 12:00
+PM</li>
+<li>Brendan Frey (BA 4136): Monday 4:00 PM - 5:00 PM</li>
+<li>Mohammad Yaghini (GB441): Monday 12:00 PM - 1:00 PM</li>
+<li>Mustafa Ammous (<a
+href="https://utoronto.zoom.us/j/84826992075">Zoom</a>): Tuesday 12:00
+PM - 1:00 PM</li>
+<li>Wen Xu (BA8176): Wednesday 5:00 - 6:00 PM</li>
+<li>Kai Wang (<a
+href="https://utoronto.zoom.us/j/82449143596">Zoom</a>): Thursday 12:00
+PM - 1:00 PM</li>
+<li>Aristeidis Seretis (BA4170): Friday 12:00 PM - 1:00 PM</li>
+</ul></li>
+<li><strong>Contact</strong>:
+<ul>
+<li>Students should ask <em>all</em> course-related questions in course
+Piazza channels. <br></li>
+<li>For personal matters only, email instructor.</li>
+</ul></li>
+<li><strong>Announcements:</strong> All announcements will be made in
+Piazza.</li>
+</ul>
+</div>
+</div>
+<div id="coursework" class="section level2 sec">
+<h2>Coursework</h2>
+<ul>
+<li><strong>Programming Assignments (40%)</strong>
+<ul>
+<li>There will be 4 assignments, each worth 10%.</li>
+<li>You may complete them individually or in pairs, and you are free to
+change partners for each assignment.</li>
+<li>Only one submission from a group member is required. Assignments
+must be submitted on Quercus, and the submission deadline will be at
+11:59 PM.</li>
+<li>Group members will receive the same grade.</li>
+</ul></li>
+<li><strong>Midterm (25%)</strong>
+<ul>
+<li>The midterm is closed book, 2 hours, and scheduled for Monday,
+October 21, 9:00 AM - 11:00 AM, which will test the content of the weeks
+before the test.</li>
+<li><strong>Allowed Calculator Types:</strong> Type 2 (<em>i.e.</em>,
+All non-programmable electronic calculators)</li>
+<li><strong>Exam Paper Type:</strong> Type A (<em>i.e.</em>, a closed
+book examination, no aids are permitted other than the information
+printed on the examination paper.)</li>
+</ul></li>
+<li><strong>Final Exam (35%)</strong>
+<ul>
+<li>The final exam is closed book, comprehensive, 2 hours and 30
+minutes, and held during the exam period.</li>
+<li><strong>Allowed Calculator Types:</strong> Type 2 (<em>i.e.</em>,
+All non-programmable electronic calculators)</li>
+<li><strong>Exam Paper Type:</strong> Type A (<em>i.e.</em>, a closed
+book examination, no aids are permitted other than the information
+printed on the examination paper.)</li>
+</ul></li>
+</ul>
+<p>All (currently tentative) deadlines are listed in the <a
+href="#schedule">schedule</a>. Note that <strong>due dates may
+change</strong> based on how the course is progressing.</p>
+</div>
+<div id="submitting" class="sec">
+<div id="submitting-coursework" class="section level2">
+<h2>Submitting Coursework</h2>
+<ul>
+<li>Do not submit your coursework via email.</li>
+<li>If anything goes wrong, please ask a question in Piazza or contact a
+course assistant.</li>
+<li>You can submit as many times as you’d like until the deadline. We
+will only grade the last submission.</li>
+<li>Partial work is better than not submitting any work.</li>
+</ul>
+</div>
+</div>
+<div id="latedays" class="sec">
+<div id="late-days" class="section level2">
+<h2>Late Days</h2>
+<p>5% deduction will be applied per day of lateness. No Submissions will
+be accepted after 72 hours except for documented unusual
+circumstances</p>
+</div>
+</div>
+<div id="sylremark" class="sec">
+<div id="regrade-requests" class="section level2">
+<h2>Regrade Requests</h2>
+<p>Regrade requests are due within 1 week of receiving the graded work
+and must be submitted by posting a private questions on Piazza.</p>
+<ul>
+<li>We ask that you carefully review your assignments, reflect, and
+write a short explanation justifying the reasons for a regrading
+request.</li>
+<li>If a grade is contested and we realize that the marker made a
+mistake in the student’s favour, the mark for that assignment may be
+lowered when the mistake is found. This would otherwise create a
+situation which is unfair to other students.</li>
+<li>Please include your full name and UTORid in the body of the private
+note.</li>
+</ul>
+</div>
+</div>
+<div id="sylremark" class="sec">
+<div id="recommended-textbooks" class="section level2">
+<h2>Recommended Textbooks</h2>
+<ul>
+<li>LFD: Learning From Data, AMLBook, 2012</li>
+<li>AIMA: Artificial Intelligence: A Modern Approach, 4th US ed.</li>
+<li>PRML: to an external site.: Pattern Recognition and Machine
+Learning</li>
+<li>DL: to an external site.: Deep Learning, by Goodfellow, Bengio and
+Courville</li>
+<li>SLP: to an external site.: Speech and Language Processing, by
+Jurafsky and Martin</li>
+</ul>
+</div>
+</div>
+<div id="course-schedule" class="section level2">
+<h2>Course Schedule</h2>
+<div id="schedule" class="container sec">
+<p>Note that in table below,</p>
+<ul>
+<li><strong>pre</strong> refers to pre-lecture note, which include
+incomplete sections to be filled in during lecture.</li>
+<li><strong>post</strong> refers to post-lecture note, representing the
+completed version of the pre-lecture note.</li>
+<li><strong>vid</strong> refers to the screencast recording of
+lecture.</li>
+</ul>
+<table>
+<colgroup>
+<col width="5%" />
+<col width="20%" />
+<col width="14%" />
+<col width="17%" />
+<col width="13%" />
+<col width="28%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Week</th>
+<th align="left">Topics</th>
+<th align="left">Readings</th>
+<th align="left">Notes and<br>Recordings</th>
+<th align="left">Tutorials</th>
+<th align="left">Coursework</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1<br>(Erfan)</td>
+<td align="left">- Course Logistics<br>- Intro to ML<br>- Nearest
+Neighbors<br>- Linear Classification</td>
+<td align="left">LFD: 1.1-1-2</td>
+<td align="left">• Part 1: <a href="./lec/w01_part1_inked.pdf">pre</a>,
+<a href="./lec/w01_part1_inked.pdf">post</a>, <a
+href="https://play.library.utoronto.ca/watch/2b2091139eb962f0527dd78e968da87c">vid</a><br>•
+Part 2: <a href="./lec/w01_part2_inked.pdf">pre</a>, <a
+href="./lec/w01_part2_inked.pdf">post</a>, <a
+href="https://play.library.utoronto.ca/watch/b35443e634d2809e789daa053c4722a1">vid</a><br>•
+Part 3: <a href="./lec/w01_part3_prelecture.pdf">pre</a>, <a
+href="./lec/w01_part3_inked.pdf">post</a>, <a
+href="https://play.library.utoronto.ca/watch/84f01cba4d7468c039457160cd7958c7">vid</a></td>
+<td align="left">No Tutorial</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">2<br>(Erfan)</td>
+<td align="left">- Linear Regression<br>- Regularization</td>
+<td align="left">LFD: 3.2.1, 3.4.1<br>Appendix B</td>
+<td align="left">• Part 1: <a
+href="./lec/w02_part1_prelecture.pdf">pre</a>, <a
+href="./lec/w02_part1_inked%20(1).pdf">post</a>, <a
+href="https://play.library.utoronto.ca/watch/4bd1d505c87db519cf558d4aeeb96877">vid</a><br>•
+Part 2: <a href="./lec/w02_part2_prelecture.pdf">pre</a>, <a
+href="./lec/w02_part2_inked.pdf">post</a>, <a
+href="https://play.library.utoronto.ca/watch/45321bc5daeee08796eac327ce9cd9c9">vid</a><br>•
+Part 3: <a href="./lec/w02_part3_prelecture.pdf">pre</a>, <a
+href="./lec/w02_part3_inked.pdf">post</a>, <a
+href="https://play.library.utoronto.ca/watch/7ff04f0cd3f02e2e37c3b30a3891693f">vid</a></td>
+<td align="left">Makeup lecture for LEC0101 due to Labour Day</td>
+<td align="left">📢 <a
+href="./assignments/ECE421_Fall24-A1-handout.pdf">A1</a> <span
+style="color: green;"><strong>out</strong></span><br> 📆 Due on
+September 26, 11:59 PM<br> - <a
+href="./assignments/ECE421_Fall24-A1-cover.pdf">A1 cover</a><br> - <a
+href="https://colab.research.google.com/drive/1vEWXOyw_x2c3fM-VR0q4DYeB0m3DJyiK?usp=sharing">A1
+Google Colab notebook</a></td>
+</tr>
+<tr class="odd">
+<td align="left">3<br>(Erfan)</td>
+<td align="left">- Logistic Regression</td>
+<td align="left">LFD: 3.3</td>
+<td align="left">• Part 1: <a
+href="./lec/w03_part1_prelecture.pdf">pre</a>, <a
+href="./lec/w03_part1_inked.pdf">post</a>, <a
+href="https://play.library.utoronto.ca/watch/c30afba938e375a2c60fcb4eb5249bd5">vid</a><br>•
+Part 2: <a href="./lec/w03_part2_prelecture.pdf">pre</a>, <a
+href="./lec/w03_part2_inked.pdf">post</a>, <a
+href="https://play.library.utoronto.ca/watch/3bcb2eaf9fc0c01168367e8ffa5b6cd9">vid</a><br>•
+Part 3: <a href="./lec/w03_part3_prelecture.pdf">pre</a>, <a
+href="./lec/w03_part3_inked.pdf">post</a>, <a
+href="https://play.library.utoronto.ca/watch/4da2303501f6a84f40559abafa2383a6">vid</a></td>
+<td align="left"><a href="./worksheet/ECE421_Fall24-ws1.pdf">Worksheet
+1</a><br> - <a
+href="./worksheet/ECE421_Fall24-ws1-sol.pdf">solution</a></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">4<br>(Erfan)</td>
+<td align="left">- Gradient Descent</td>
+<td align="left">LFD: 3.3<br>DL: 8.3.1-8.3.3 (recommended)</td>
+<td align="left">• Part 1: <a
+href="./lec/w04_part1_prelecture.pdf">pre</a>, <a
+href="./lec/w04_part1_inked.pdf">post</a>, <a
+href="https://play.library.utoronto.ca/watch/bfb0f871aa22a1a140da742ec6b2fff7">vid</a><br>•
+Part 2: <a href="./lec/w04_part2_prelecture.pdf">pre</a>, <a
+href="./lec/w04_part2_inked.pdf">post</a>, <a
+href="https://play.library.utoronto.ca/watch/29dd1b799652311b3b28c07bcfb9dc20">vid</a><br>•
+Part 3: <a href="./lec/w04_part3_prelecture.pdf">pre</a>, <a
+href="./lec/w04_part3_inked.pdf">post</a>, <a
+href="https://play.library.utoronto.ca/watch/c405e1dcf8732888f04dbe935ff17d69">vid</a></td>
+<td align="left"><a href="./worksheet/ECE421_Fall24-ws2.pdf">Worksheet
+2</a><br> - <a
+href="./worksheet/ECE421_Fall24-ws2-sol.pdf">solution</a></td>
+<td align="left">⏰ A1 <span
+style="color: red;"><strong>due</strong></span></td>
+</tr>
+<tr class="odd">
+<td align="left">5<br>(Brendan)</td>
+<td align="left">- Unsupervised Learning<br> - Clustering, k-means
+clustering<br>- Density Estimation<br>- Mixture of Gaussians<br>-
+Hard-assignment learning of MoG<br>- EM: Soft assignment</td>
+<td align="left">PRML: 9.1, 9.2</td>
+<td align="left">• Part 1: <a href="./lec/w05and06_inked.pdf">pre</a>,
+<a href="./lec/w05and06_inked.pdf">post</a>, <a
+href="https://play.library.utoronto.ca/watch/fe2163153bb791b2c99e67862b5da1e5">vid</a><br>•
+Part 2: <a href="./lec/w05and06_inked.pdf">pre</a>, <a
+href="./lec/w05and06_inked.pdf">post</a>, <a
+href="https://play.library.utoronto.ca/watch/d7270074e1a9260cfc637963396659fb">vid</a></td>
+<td align="left"><a href="./worksheet/ECE421_Fall24-ws3.pdf">Worksheet
+3</a><br> - <a
+href="./worksheet/ECE421_Fall24-ws3-sol.pdf">solution</a></td>
+<td align="left">📢 <a
+href="./assignments/ECE421_Fall24-A2-handout.pdf">A2</a> <span
+style="color: green;"><strong>out</strong></span><br> 📆 Due on Oct. 18,
+11:59 PM<br> - <a href="./assignments/ECE421_Fall24-A2-cover.pdf">A2
+cover</a><br> - <a
+href="./assignments/ECE421_Fall24-A2-python-files.zip">A2 Python
+files</a><br> - <a
+href="https://colab.research.google.com/drive/1qFIAd84kNlCVimwCuhG4F4YO-0HRV9Yr?usp=sharing">A2
+Google Colab notebook</a><br> - <a
+href="./assignments/ECE421_Fall24-A2-latex-template.zip">A2 LATEX
+template</a></td>
+</tr>
+<tr class="even">
+<td align="left">6<br>(Brendan)</td>
+<td align="left">- Deep Learning<br> - Neural Networks<br> -
+Backpropagation</td>
+<td align="left">LFD: Sec 7.1, 7.2<br>DL: Ch 14</td>
+<td align="left">• Part 1: <a href="./lec/w05and06_inked.pdf">pre</a>,
+<a href="./lec/w05and06_inked.pdf">post</a>, <a
+href="https://play.library.utoronto.ca/watch/fe2163153bb791b2c99e67862b5da1e5">vid</a><br>•
+Part 2: <a href="./lec/w05and06_inked.pdf">pre</a>, <a
+href="./lec/w05and06_inked.pdf">post</a>, <a
+href="https://play.library.utoronto.ca/watch/9a338b77e5844d0ad913cb1fa6009252">vid</a></td>
+<td align="left"><a href="./worksheet/ECE421_Fall24-ws4.pdf">Worksheet
+4</a><br> - <a
+href="./worksheet/ECE421_Fall24-ws4-sol.pdf">solution</a></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">7<br>(Erfan &amp; Brendan)</td>
+<td align="left">- Thanksgiving Day!<br>- Midterm Review</td>
+<td align="left"></td>
+<td align="left">• <a
+href="https://play.library.utoronto.ca/watch/51128e7a5d08010cdb1c2dd066405612">Review</a></td>
+<td align="left"><a href="./worksheet/ECE421_Fall24-ws5.pdf">Worksheet
+5</a><br> - <a
+href="./worksheet/ECE421_Fall24-ws5-sol.pdf">solution</a></td>
+<td align="left">⏰ A2 <span
+style="color: red;"><strong>due</strong></span><br>📢 <a
+href="./exams/ECE421_sample_midterm.pdf">Sample midterm</a> <span
+style="color: green;"><strong>out</strong></span><br>📬 <span
+style="color: orange;"><strong>Sample midterm solution</strong></span>
+posted<br> 🔎 Available on Piazza</td>
+</tr>
+<tr class="even">
+<td align="left">8<br>(Brendan)</td>
+<td align="left">- Deep Learning in Practice<br> - Dropout</td>
+<td align="left">LFD: 7.2<br>DL: 7.12, 8.4, 8.5 (recommended)</td>
+<td align="left">• <a
+href="./exams/ECE421_Fall24_Midterm.pdf">Midterm</a><br>• Part 1: <a
+href="./lec/w08and10_part1_inked.pdf">pre</a>, <a
+href="./lec/w08and10_part1_inked.pdf">post</a>, <a
+href="https://play.library.utoronto.ca/watch/dc29b13be5c2fb3121c0a06e276819d2">vid</a></td>
+<td align="left">Makeup lecture for LEC0101 due to Thanksgiving</td>
+<td align="left">⏰ Midterm is on Monday<br>📢 <a
+href="ECE421_Fall24-A3-handout.pdf">A3</a> <span
+style="color: green;"><strong>out</strong></span><br> 📆 Due on Nov. 15,
+11:59 PM<br> - <a href="./assignments/ECE421_Fall24-A3-cover.pdf">A3
+cover</a><br> - <a
+href="./assignments/ECE421_Fall24-A3-python-files.zip">A3 Python
+files</a><br> - <a
+href="https://colab.research.google.com/drive/1R_kzF4fKg72XTF_zys-Facq5LkiBaCH6?usp=sharing">A3
+Google Colab notebook</a><br> - <a
+href="./assignments/ECE421_Fall24-A3-latex-template.zip">A3 LATEX
+template</a></td>
+</tr>
+<tr class="odd">
+<td align="left">Reading Week</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">9<br>(Brendan)</td>
+<td align="left">- Convolutional Nets<br>- Recurrent Nets<br>-
+Translation &amp; Seq2Seq Models<br>- Language Models<br>- LSTM<br>-
+Transformers &amp; Attention</td>
+<td align="left"><em>CNN</em>: PRML 5.5.6, DL 9;<br><em>RNN</em>: DL
+10.1, 10.2;<br><em>Seq2Seq</em>: DL 10.4;<br><em>LSTM</em>: DL
+10.10;<br><em>Transformers &amp; Attention</em>: SLP 9</td>
+<td align="left">• Part 1: <a
+href="./lec/w08and10_part1_inked.pdf">pre</a>, <a
+href="./lec/w08and10_part1_inked.pdf">post</a>, <a
+href="https://play.library.utoronto.ca/watch/e01785a0b7508b5b703328bab687673c">vid</a><br>•
+Part 2: <a href="./lec/w08and10_part2_inked.pdf">pre</a>, <a
+href="./lec/w08and10_part2_inked.pdf">post</a>, <a
+href="https://play.library.utoronto.ca/watch/89be856060b2c062a218c1542f47e790">vid</a></td>
+<td align="left">Guest Lecture by Albi Celaj<br> - <a
+href="./worksheet/w10_AlbiCelaj_DeepGenomics.pdf">slides</a><br> - <a
+href="https://play.library.utoronto.ca/watch/a01567b6c856fa212abe5f6e25c19d2f">recording</a></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">10<br>(Erfan)</td>
+<td align="left">- Markov Decision Process</td>
+<td align="left">AIMA: 16</td>
+<td align="left">• Part 1: <a href="./lec/w11_part1_prelec.pdf">pre</a>,
+<a href="./lec/w11_part1_inked.pdf">post</a>, <a
+href="https://play.library.utoronto.ca/watch/c4c72b760be24f5e9f78fb37c4343946">vid</a><br>•
+Part 2: <a href="./lec/w11_part2_prelec.pdf">pre</a>, <a
+href="./lec/w11_part2_inked.pdf">post</a>, <a
+href="https://play.library.utoronto.ca/watch/b490a655f0a271c37527fb3da5c9dbf7">vid</a><br>•
+Part 3: <a href="./lec/w11_part3_prelec.pdf">pre</a>, <a
+href="./lec/w11_part3_inked.pdf">post</a>, <a
+href="https://play.library.utoronto.ca/watch/56030b34b06b8b38677ab0239e19bfb3">vid</a></td>
+<td align="left"><a href="./worksheet/ECE421_Fall24-ws6.pdf">Worksheet
+6</a><br> - <a
+href="./worksheet/ECE421_Fall24-ws6-sol.pdf">solution</a><br>Guest
+Lecture by Shreshth Gandhi<br> - <a
+href="./worksheet/w11_Shreshth_Gandhi_Vivo.pdf">slides</a><br> - <a
+href="https://play.library.utoronto.ca/watch/ce09bfc5021aefcb033d01299b9280a2">recording</a></td>
+<td align="left">⏰ A3 <span
+style="color: red;"><strong>due</strong></span></td>
+</tr>
+<tr class="even">
+<td align="left">11<br>(Erfan)</td>
+<td align="left">- Reinforcement Learning</td>
+<td align="left">AIMA: 23.1-23.4</td>
+<td align="left">• Part 1: <a href="./lec/w12_part1_prelec.pdf">pre</a>,
+<a href="./lec/w12_part1_inked.pdf">post</a>, <a
+href="https://play.library.utoronto.ca/watch/7eff451a81111cbc22bcc83edb324dfd">vid</a><br>•
+Part 2: <a href="./lec/w12_part2_prelec.pdf">pre</a>, <a
+href="./lec/w12_part2_inked.pdf">post</a>, <a
+href="https://play.library.utoronto.ca/watch/aff5b2f63cf1b1e7b7b2b768a692f6b9">vid</a><br>•
+Part 3: <a href="./lec/w12_part3_prelec.pdf">pre</a>, <a
+href="./lec/w12_part3_inked.pdf">post</a>, <a
+href="https://play.library.utoronto.ca/watch/cb22f19d809733aeeafee7674eada2d0">vid</a></td>
+<td align="left">Guest Lecture by Professor Bo Wang<br> - <a
+href="./worksheet/w12-BoWang-UHN.pdf">slides</a><br> - <a
+href="https://play.library.utoronto.ca/watch/e7ca4a237c91646d16a2927c25d867e6">recording</a></td>
+<td align="left">📢 <a
+href="./assignments/ECE421_Fall24-A4-handout.pdf">A4</a> <span
+style="color: green;"><strong>out</strong></span><br> 📆 Due on Dec. 4,
+11:59 PM<br> - <a href="./assignments/ECE421_Fall24-A4-cover.pdf">A4
+cover</a><br> - <a
+href="./assignments/ECE421_Fall24-A4-python-files.zip">A4 Python
+files</a><br> - <a
+href="https://colab.research.google.com/drive/1o7FZADmCiz2dxeSQK2rYxEquP5Ie6s_x?usp=sharing">A4
+Google Colab notebook</a><br> - <a
+href="./assignments/ECE421_Fall24-A4-latex-template.zip">A4 LATEX
+template</a></td>
+</tr>
+<tr class="odd">
+<td align="left">12<br>(Erfan)</td>
+<td align="left">- Reinforcement Learning, cont’d</td>
+<td align="left">AIMA: 23.1-23.4</td>
+<td align="left">• Part 1: <a href="./lec/w13_part0_prelec.pdf">pre</a>,
+<a href="./lec/w13_part0_inked.pdf">post</a>, <a
+href="https://play.library.utoronto.ca/watch/e27c9e7feebf83c3acc11bc04c3d0c0b">vid</a><br>•
+Part 2: <a href="./lec/w13_part1-2_prelec.pdf">pre</a>, <a
+href="./lec/w13_part1-2_inked.pdf">post</a>, <a
+href="https://play.library.utoronto.ca/watch/e27c9e7feebf83c3acc11bc04c3d0c0b">vid</a><br>•
+Part 3: <a href="./lec/w13_part3_inked.pdf">pre</a>, <a
+href="./lec/w13_part3_inked.pdf">post</a>, <a
+href="https://play.library.utoronto.ca/watch/ad10ad8fbdd68a9f3f50e05bd8265916">vid</a></td>
+<td align="left"><a href="./worksheet/ECE421_Fall24-ws7.pdf">Worksheet
+7</a><br> - <a
+href="./worksheet/ECE421_Fall24-ws7-sol.pdf">solution</a></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">13<br>(Erfan &amp; Brendan)</td>
+<td align="left">- Course Review</td>
+<td align="left"></td>
+<td align="left">• Part 1: <a
+href="https://play.library.utoronto.ca/watch/f8ef09ff05b2af92b99954b771ebec39">vid</a><br>•
+Part 2: <a
+href="https://play.library.utoronto.ca/watch/23e17655dcef4050cea6910184bf3244">vid</a><br>•
+Part 3: <a
+href="https://play.library.utoronto.ca/watch/6d9dd9e91a4e46524890ac8520e1a906">vid</a></td>
+<td align="left"><a href="./exams/ECE421_SampleFall24_v01.pdf">Sample
+final</a><br> - <a
+href="./exams/ECE421_SampleFall24_sol.pdf">solution</a></td>
+<td align="left">⏰ A4 <span
+style="color: red;"><strong>due</strong></span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
