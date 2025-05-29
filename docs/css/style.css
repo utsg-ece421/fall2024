@@ -320,16 +320,18 @@ h3 {
 
   #schedule td:nth-of-type(1) { font-weight: 500; }
   #schedule td:nth-of-type(1):before {
-    content: "Date:";
+    content: "Week:";
     font-weight: 300;
   }
   #schedule td:nth-of-type(2) { font-weight: 500; }
   #schedule td:nth-of-type(2):before {
-    content: "Description:";
+    content: "Topics:";
     font-weight: 300;
   }
-  #schedule td:nth-of-type(4):before { content: "Events:"; }
-  #schedule td:nth-of-type(5):before { content: "Deadlines:"; }
+  #schedule td:nth-of-type(4):before { content: "Readings:"; }
+  #schedule td:nth-of-type(5):before { content: "Notes & Recordings:"; }
+  #schedule td:nth-of-type(6):before { content: "Tutorial:"; }
+  #schedule td:nth-of-type(7):before { content: "Tasks and Announcements:"; }
 }
 
 #unreleased-message {

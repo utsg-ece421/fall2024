@@ -196,7 +196,7 @@ Note that in table below,
   - **post** refers to post-lecture note, representing the completed version of the pre-lecture note.
   - **vid** refers to the screencast recording of lecture.
 
-|Week | Topics           | Readings    | Notes and<br>Recordings  | Tutorials | Coursework
+|Week | Topics           | Readings    | Notes and<br>Recordings  | Tutorial | Coursework
 |:----|:-----------------|:------------|:---------------|:-----------|:------------------------
 |1<br>(Erfan)    | `r w01_top`      | `r w01_rea` | `r w01_sli`| `r w01_wsh`| `r w01_crw`               
 |2<br>(Erfan)    | `r w02_top`      | `r w02_rea` | `r w02_sli`| `r w02_wsh`| `r w02_crw`
