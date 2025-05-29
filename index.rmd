@@ -1,5 +1,5 @@
 ---
-title: "ECE421 Fall 2024"
+title: "ECE421 - Fall 2024"
 output: html_document
 ---
 
@@ -23,10 +23,8 @@ source("./_aux/week13.R")
 
 
 ::: {#header}
-::: {#header-text .sec}
-**`r course_code`: `r course_full_name`**<br>
-<span class="header-subtitle">`r university` -- `r season` `r year`<br>`r department`</span>
-:::
+<span class="header-title">`r course_code`: `r course_full_name`<br></span>
+<span class="header-subtitle">`r university`<br>`r department`<br>`r season` `r year`</span>
 
 ::: {#header-image .img}
 ![](./images/favicon.png)
@@ -78,7 +76,7 @@ For your convenience, all lectures and instructor's Office Hours will be also li
 ## Logistics
 
 - **Instructors:** 
-  - Erfan Meskar ![](./images/erfan_email.jpg) 
+  - Erfan Meskar ![Erfan's Email](./images/erfan_email.jpg) 
   - Brendan Frey ![](./images/brendan_email.jpg)
 - **Lectures:** you can attend the lectures both in-person and 
 over [Zoom](`r zoom_lec_l`).
