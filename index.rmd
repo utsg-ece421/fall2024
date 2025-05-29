@@ -48,7 +48,7 @@ For your convenience, all lectures and instructor's Office Hours will be also li
 ![Brendan Frey<br>Instructor](./images/empty.png)
 :::
 ::: instructorphoto
-![Mohammad Yaghini<br>TA](./images/empty.png)
+![Mohammad Yaghini<br>TA](./images/mohammad_yaghini.jpg)
 :::
 
 ::: instructorphoto
