@@ -328,10 +328,10 @@ h3 {
     content: "Topics:";
     font-weight: 300;
   }
-  #schedule td:nth-of-type(4):before { content: "Readings:"; }
-  #schedule td:nth-of-type(5):before { content: "Notes & Recordings:"; }
-  #schedule td:nth-of-type(6):before { content: "Tutorial:"; }
-  #schedule td:nth-of-type(7):before { content: "Tasks and Announcements:"; }
+  #schedule td:nth-of-type(3):before { content: "Readings:"; }
+  #schedule td:nth-of-type(4):before { content: "Notes & Recordings:"; }
+  #schedule td:nth-of-type(5):before { content: "Tutorial:"; }
+  #schedule td:nth-of-type(6):before { content: "Tasks and Announcements:"; }
 }
 
 #unreleased-message {
