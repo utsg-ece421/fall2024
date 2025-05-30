@@ -56,7 +56,7 @@ For your convenience, all lectures and instructor's Office Hours will be also li
 :::
 
 ::: instructorphoto
-![Wen Xu<br>TA](./images/empty.png)
+![Wen Xu<br>TA](./images/wen.jpg)
 :::
 
 ::: instructorphoto
@@ -76,8 +76,8 @@ For your convenience, all lectures and instructor's Office Hours will be also li
 ## Logistics
 
 - **Instructors:** 
-  - Erfan Meskar ![Erfan's Email](./images/erfan_email.jpg) 
-  - Brendan Frey ![](./images/brendan_email.jpg)
+  - Erfan Meskar (e.meskar@utoronto.ca) 
+  - Brendan Frey (frey@psi.utoronto.ca)
 - **Lectures:** you can attend the lectures both in-person and 
 over [Zoom](`r zoom_lec_l`).
   - **LEC0101:** 
