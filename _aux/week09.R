@@ -13,7 +13,7 @@ ws <- "./worksheet/w10_AlbiCelaj_DeepGenomics.pdf"
 ws_sol <- "https://play.library.utoronto.ca/watch/a01567b6c856fa212abe5f6e25c19d2f"
 
 w09_top <- "- Convolutional Nets<br>- Recurrent Nets<br>- Translation & Seq2Seq Models<br>- Language Models<br>- LSTM<br>- Transformers & Attention"
-w09_rea <- "*CNN*: PRML 5.5.6, DL 9;<br>*RNN*: DL 10.1, 10.2;<br>*Seq2Seq*: DL 10.4;<br>*LSTM*: DL 10.10;<br>*Transformers & Attention*: SLP 9"
+w09_rea <- "PRML: 5.5.6, DL 9;<br>DL: 10.1, 10.2;<br>DL: 10.4;<br>DL: 10.10;<br>SLP: 9"
 w09_sli <-  lec_part_ann(
   list(day = "Part 1", slides_link = s1, postnote_link = ps1, recording_link = v1), # nolint
   list(day = "Part 2", slides_link = s2, postnote_link = ps2, recording_link = v2) # nolint

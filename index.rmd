@@ -42,17 +42,18 @@ For your convenience, all lectures and instructor's Office Hours will be also li
 ::: {#shuffleleft-container .col .sec}
 
 ::: instructorphoto
-![Erfan Meskar<br>Instructor](./images/erfan_img3.png)
+![Brendan Frey<br>Instructor](./images/Brendan.jpg)
 :::
 ::: instructorphoto
-![Brendan Frey<br>Instructor](./images/empty.png)
+![Erfan Meskar<br>Instructor](./images/erfan_img3.png)
 :::
+
 ::: instructorphoto
 ![Mohammad Yaghini<br>TA](./images/mohammad_yaghini.jpg)
 :::
 
 ::: instructorphoto
-![Mustafa Ammous<br>TA](./images/empty.png)
+![Mustafa Ammous<br>TA](./images/mustafa.jpg)
 :::
 
 ::: instructorphoto
@@ -76,8 +77,8 @@ For your convenience, all lectures and instructor's Office Hours will be also li
 ## Logistics
 
 - **Instructors:** 
-  - Erfan Meskar (e.meskar@utoronto.ca) 
   - Brendan Frey (frey@psi.utoronto.ca)
+  - Erfan Meskar (e.meskar@utoronto.ca)
 - **Lectures:** you can attend the lectures both in-person and 
 over [Zoom](`r zoom_lec_l`).
   - **LEC0101:** 
@@ -91,10 +92,10 @@ over [Zoom](`r zoom_lec_l`).
   - **TUT0102:** Wednesday, 12:00 PM - 2:00 PM, Room GB 304 (*in-person only*)
   - **TUT0103:** Wednesday, 12:00 PM - 2:00 PM, Room GB 120 (*in-person only*)
 - **Office hours:**
-  - Erfan Meskar (Pratt Building 371): 
-  Thursdays 10:00 AM - 12:00 PM
   - Brendan Frey (BA 4136): 
   Monday 4:00 PM - 5:00 PM
+  - Erfan Meskar (Pratt Building 371): 
+  Thursdays 10:00 AM - 12:00 PM
   - Mohammad Yaghini (GB441): 
   Monday 12:00 PM - 1:00 PM
   - Mustafa Ammous ([Zoom](https://utoronto.zoom.us/j/84826992075)): 
@@ -124,22 +125,22 @@ over [Zoom](`r zoom_lec_l`).
       be submitted on Quercus, and the submission deadline will be at 11:59 PM.
       - Group members will receive the same grade.
   - **Midterm (25%)**
-      - The midterm is closed book, 2 hours, and scheduled for Monday, 
-      October 21, 9:00 AM - 11:00 AM, which will test the content of the weeks 
-      before the test.
       - **Allowed Calculator Types:** Type 2 (*i.e.*, All non-programmable 
       electronic calculators)
       - **Exam Paper Type:** Type A (*i.e.*, a closed book examination, no aids 
       are permitted other than the information printed on the examination 
       paper.)
+      - The midterm is closed book, 2 hours, and scheduled for Monday, 
+      October 21, 9:00 AM - 11:00 AM, which will test the content of the weeks 
+      before the test.
   - **Final Exam (35%)**
-      - The final exam is closed book, comprehensive, 2 hours and 30 minutes, 
-      and held during the exam period.
       - **Allowed Calculator Types:** Type 2 (*i.e.*, All non-programmable 
       electronic calculators)
       - **Exam Paper Type:** Type A (*i.e.*, a closed book examination, no 
       aids are permitted other than the information printed on the examination 
       paper.)
+      - The final exam is closed book, comprehensive, 2 hours and 30 minutes, 
+      and held during the exam period.
 
 All (currently tentative) deadlines are listed in the [schedule](#schedule). 
 Note that **due dates may change** based on how the course is progressing.
@@ -179,11 +180,11 @@ submitted by posting a private questions on Piazza.
 ::: {#sylremark .sec}
 ## Recommended Textbooks
 
-- LFD: Learning From Data, AMLBook, 2012
-- AIMA: Artificial Intelligence: A Modern Approach, 4th US ed.
-- PRML: to an external site.: Pattern Recognition and Machine Learning
-- DL: to an external site.: Deep Learning, by Goodfellow, Bengio and Courville
-- SLP: to an external site.: Speech and Language Processing, by Jurafsky and Martin
+- **LFD:** Learning From Data, AMLBook, 2012
+- **AIMA:** Artificial Intelligence: A Modern Approach, 4th US ed.
+- **PRML:** to an external site.: Pattern Recognition and Machine Learning
+- **DL:** to an external site.: Deep Learning, by Goodfellow, Bengio and Courville
+- **SLP:** to an external site.: Speech and Language Processing, by Jurafsky and Martin
 :::
 
 ## Course Schedule
