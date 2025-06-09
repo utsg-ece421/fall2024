@@ -65,7 +65,7 @@ For your convenience, all lectures and instructor's Office Hours will be also li
 :::
 
 ::: instructorphoto
-![Aristeidis Seretis<br>TA](./images/empty.png)
+![Aristeidis Seretis<br>TA](./images/aris.jpg)
 :::
 
 :::
